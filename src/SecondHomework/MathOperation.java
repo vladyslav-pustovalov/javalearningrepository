@@ -4,6 +4,12 @@ import java.math.BigDecimal;
 
 public class MathOperation {
     public static void main (String[] args) {
+        /**
+        Гуглив як знайти сумму з самого початку, бо чогось туго доходило. Потім усе наробив сам (там з МаксПозітів такий
+        якийсь прикол написам - але сам). І СекондМакс теж гуглив, бо довбався з ним години півтори дві в суммі за
+        декілька заходів, сам дойшов що треба цикл в цикл вставляти, і що треба робити якусь дію з переприсвоєнням
+        значень для елементів массиву через додаткову змінну, але не туди цикл в цикл вставляв, і не там робив
+        переприсвоєння - тому нічого не працювало, і після години мук усе вирішилось гуглінням=) */
         System.out.println(sum());
         System.out.println(min());
         System.out.println(minD());
@@ -11,8 +17,11 @@ public class MathOperation {
         System.out.println(maxD());
         System.out.println(multiplication());
         System.out.println(multiplicationD());
+        System.out.println(maxPositive());
+        System.out.println(modulusFirstAndLast());
+        System.out.println(secondMax());
     }
-    static int[] array = {1, -2, 3, -4, 5, -6, 7, -8, 9, 10};
+    static int[] array = {10, 2, -3, 4, -5, 6, -7, 8, -9, 6};
     static int sum() {
         int sum = 0;
         int i;
@@ -70,26 +79,42 @@ public class MathOperation {
             multiplicationD *= array[i];
         return multiplicationD;
     }
-    static int secondMax() {
-        int max = array[0];
-        int secondMax = array[0];
+    static String maxPositive() {
+        String maxPositive;
+        int maxP = array[0];
         int i;
-        int j;
-        for (i = 0; i < array.length; i++)
-            if (max < array[i]) {
-                max = array[i];
+        for (i = 0; i < array.length; i++) {
+            if (maxP < array[i]) {
+                maxP = array[i];
             }
-        return max;
-        for (j = 1; j < array.length; j++)
-            if (secondMax < array[j]) {
-                secondMax = array[j];
-            }
-        return secondMax;
-        if (max > secondMax) {
-            return secondMax;
-        } else if (secondMax == max) {
-
         }
-
+        if (maxP > 0) {
+            maxPositive = Integer.toString(maxP);
+        } else {
+            maxPositive = "the array does not have any positive numbers";
+        }
+        return maxPositive;
+    }
+    static int modulusFirstAndLast() {
+        int a, first, last, result;
+        first = array[0];
+        a = array.length - 1;
+        last = array[a];
+        result = first % last;
+        return result;
+    }
+    static int secondMax() {
+        int max, secondMax,i,j,f;
+        max = array[0];
+        for (i = 0; i < array.length; i++) {
+            for (j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    f = array[i];
+                    array[i] = array[j];
+                    array[j] = f;
+                }
+            }
+        }
+        return array[array.length - 2];
     }
 }

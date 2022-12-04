@@ -1,7 +1,4 @@
 package SecondHomework;
-
-import java.math.BigDecimal;
-
 public class MathOperation {
     public static void main (String[] args) {
         /**
@@ -21,7 +18,7 @@ public class MathOperation {
         System.out.println(modulusFirstAndLast());
         System.out.println(secondMax());
     }
-    static int[] array = {10, 2, -3, 4, -5, 6, -7, 8, -9, 6};
+    static int[] array = {18, 2, -3, 4, -5, 6, -7, 8, -9, 36};
     static int sum() {
         int sum = 0;
         int i;
@@ -104,17 +101,16 @@ public class MathOperation {
         return result;
     }
     static int secondMax() {
-        int max, secondMax,i,j,f;
-        max = array[0];
-        for (i = 0; i < array.length; i++) {
+        int i,j,f;
+        for (i = 0; i < 2; i++) {
             for (j = i + 1; j < array.length; j++) {
-                if (array[i] > array[j]) {
+                if (array[i] < array[j]) {
                     f = array[i];
                     array[i] = array[j];
                     array[j] = f;
                 }
             }
         }
-        return array[array.length - 2];
+        return array[1];
     }
 }

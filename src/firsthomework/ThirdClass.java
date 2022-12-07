@@ -1,4 +1,4 @@
-package FirstHomework;
+package firsthomework;
 
 public class ThirdClass {
     public static void main(String[] args) {

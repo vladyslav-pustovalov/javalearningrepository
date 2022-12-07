@@ -2,7 +2,7 @@ package secondhomework;
 
 public class MathOperation {
     public static void main (String[] args) {
-        int[] array = {18, 2, -3, 4, -5, 6, -7, 8, -9, 36};
+        int[] array = {-18, 2, -3, 4, -5, 6, -7, 8, -9, 36};
         System.out.println(sum(array));
         System.out.println(min(array));
         System.out.println(max(array));
@@ -59,7 +59,7 @@ public class MathOperation {
         if (maxP > 0) {
             maxP = maxP;
         } else {
-            maxP = Integer.parseInt(null);
+            System.out.println("there are no any positive numbers");
         }
         return maxP;
     }

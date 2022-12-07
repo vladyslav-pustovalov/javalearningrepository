@@ -3,22 +3,19 @@ package secondhomework;
 import java.util.Objects;
 
 public class Bank {
-    static double balance, withdrawal;
-    static String ownerName;
+    //static double balance, withdrawal;
+    //static String ownerName;
     static int[] balances = {1200, 250, 2000, 500, 3200};
     static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
     public static void main(String[] args) {
-        balance = 100;
-        withdrawal = 90;
-        System.out.println(withdrawingMoneyFromAccount());
-        ownerName = "Ann";
-        withdrawal = 50;
-        System.out.println(checkingWithdrawingMoney());
-        ownerName = "Ann";
-        withdrawal = 550;
-        System.out.println(balanceFunding());
+        //int[] balances = {1200, 250, 2000, 500, 3200};
+        //String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
+        System.out.println(withdrawingMoneyFromAccount(100, 90));
+        System.out.println(checkingWithdrawingMoney("Jane", 250 ));
+        System.out.println(balanceFunding("Ann", 98));
     }
-    static String withdrawingMoneyFromAccount(){
+
+    static String withdrawingMoneyFromAccount(double balance, double withdrawal) {
         double commission, newBalance;
         String result;
         commission = withdrawal * 0.05;
@@ -30,7 +27,7 @@ public class Bank {
         }
         return result;
     }
-    static String checkingWithdrawingMoney() {
+    static String checkingWithdrawingMoney(String ownerName, double withdrawal) {
         String result;
         int i;
         i = 0;
@@ -47,7 +44,7 @@ public class Bank {
         }
         return result;
     }
-    static String balanceFunding() {
+   static String balanceFunding(String ownerName, double withdrawal) {
         String result;
         int i;
         i = 0;

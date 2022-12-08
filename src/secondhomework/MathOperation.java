@@ -1,7 +1,7 @@
 package secondhomework;
 
 public class MathOperation {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         int[] array = {-18, 2, -3, 4, -5, 6, -7, 8, -9, 36};
         System.out.println(sum(array));
         System.out.println(min(array));
@@ -15,7 +15,7 @@ public class MathOperation {
     static int sum(int[] array) {
         int sum = 0;
         int i;
-        for(i = 0; i<array.length; i++)
+        for (i = 0; i < array.length; i++)
             sum += array[i];
         return sum;
     }
@@ -23,7 +23,7 @@ public class MathOperation {
     static int min(int[] array) {
         int min = array[0];
         int i;
-        for(i = 0; i<array.length; i++)
+        for (i = 0; i < array.length; i++)
             if (min > array[i]) {
                 min = array[i];
             }
@@ -43,7 +43,7 @@ public class MathOperation {
     static long multiplication(int[] array) {
         int multiplication = array[0];
         int i;
-        for(i = 0; i<array.length; i++)
+        for (i = 0; i < array.length; i++)
             multiplication *= array[i];
         return multiplication;
     }
@@ -64,7 +64,7 @@ public class MathOperation {
         return maxP;
     }
 
-    static int modulusFirstAndLast(int[]array) {
+    static int modulusFirstAndLast(int[] array) {
         int a, first, last, result;
         first = array[0];
         a = array.length - 1;
@@ -74,7 +74,7 @@ public class MathOperation {
     }
 
     static int secondMax(int[] array) {
-        int i,j,f;
+        int i, j, f;
         for (i = 0; i < 2; i++) {
             for (j = i + 1; j < array.length; j++) {
                 if (array[i] < array[j]) {

@@ -8,8 +8,8 @@ public class Bank {
         int[] balances = {1200, 250, 2000, 500, 3200};
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
         System.out.println(withdrawingMoneyFromAccount(100, 90));
-        System.out.println(checkingWithdrawingMoney(balances,ownerNames,"Jane", 250 ));
-        System.out.println(balanceFunding(balances,ownerNames,"Ann", 98));
+        System.out.println(checkingWithdrawingMoney(balances, ownerNames, "Jane", 250));
+        System.out.println(balanceFunding(balances, ownerNames, "Ann", 98));
     }
 
     static String withdrawingMoneyFromAccount(double balance, double withdrawal) {
@@ -24,7 +24,8 @@ public class Bank {
         }
         return result;
     }
-    static String checkingWithdrawingMoney(int[] balances,String[] ownerNames,String ownerName, double withdrawal) {
+
+    static String checkingWithdrawingMoney(int[] balances, String[] ownerNames, String ownerName, double withdrawal) {
         String result;
         int i;
         i = 0;
@@ -41,7 +42,8 @@ public class Bank {
         }
         return result;
     }
-   static String balanceFunding(int[] balances,String[] ownerNames,String ownerName, double withdrawal) {
+
+    static String balanceFunding(int[] balances, String[] ownerNames, String ownerName, double withdrawal) {
         String result;
         int i;
         i = 0;

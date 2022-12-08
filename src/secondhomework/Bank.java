@@ -3,10 +3,7 @@ package secondhomework;
 import java.util.Objects;
 
 public class Bank {
-    //static double balance, withdrawal;
-    //static String ownerName;
-    //static int[] balances = {1200, 250, 2000, 500, 3200};
-    //static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
+
     public static void main(String[] args) {
         int[] balances = {1200, 250, 2000, 500, 3200};
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};

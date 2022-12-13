@@ -1,6 +1,6 @@
 package thirdhomework;
 
-public class Users {
+public class User {
 
     private String name, companyName, currency;
     private int balance, monthsOfEmployment, salary;
@@ -53,13 +53,41 @@ public class Users {
         this.salary = salary;
     }
 
-    public Users(String name, String companyName, String currency, int balance, int monthsOfEmployment, int salary) {
+    public User(String name, String companyName, String currency, int balance, int monthsOfEmployment, int salary) {
         this.name = name;
         this.companyName = companyName;
         this.currency = currency;
         this.balance = balance;
         this.monthsOfEmployment = monthsOfEmployment;
         this.salary = salary;
+    }
 
+    public void paySalary () {
+        balance = balance + salary;
+    }
+
+    public void withdraw (int summ) {
+        double commission;
+        if (summ < 1000) {
+            commission = summ * 0.05;
+        } else {
+            commission = summ * 0.1;
+        }
+        if ((summ + commission) < balance) {
+            balance -= (summ + commission);
+            System.out.println("Summ = "+summ+",Commission = "+commission+", new Banance = "+balance);
+        } else {
+            System.out.println("You are really poor");
+        }
+    }
+
+    public void companyNameLenght () {
+        int companyNameLenght = companyName.length();
+        System.out.println(companyNameLenght);
+    }
+
+    public void increaseEmploymentMonth(int addMonth) {
+        monthsOfEmployment += addMonth;
+        System.out.println("Ok, months of employment = "+monthsOfEmployment);
     }
 }

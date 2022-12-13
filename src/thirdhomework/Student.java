@@ -49,13 +49,16 @@ public class Student {
     }
 
     public Student (String firstName, String lastName, int group) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        setGroup(group);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.group = group;
     }
 
     public Student (String lastName, Course[] coursesTaken) {
-        setLastName(lastName);
-        setCoursesTaken(coursesTaken);
+        this.lastName = lastName;
+        this.coursesTaken = coursesTaken;
+    }
+
+    protected Student () {
     }
 }

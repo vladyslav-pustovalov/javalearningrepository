@@ -41,12 +41,12 @@ public class Course {
     }
 
     public Course (java.util.Date startDate, String name) {
-        setStartDate(startDate);
-        setName(name);
+        this.startDate = startDate;
+        this.name = name;
     }
 
     public Course (int hoursDuration, String teacherName) {
-        setHoursDuration(hoursDuration);
-        setTeacherName(teacherName);
+        this.hoursDuration = hoursDuration;
+        this.teacherName = teacherName;
     }
 }

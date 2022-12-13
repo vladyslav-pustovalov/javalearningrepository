@@ -13,5 +13,15 @@ public class Solutions {
         Student ivan, igor;
         ivan = new Student("Ivan", "Ivanov", 111);
         igor = new Student("Igor","Igorov", 222);
+
+        CollegeStudent vasyl, volodymyr, vitalii;
+        vasyl = new CollegeStudent("Vasyl", "Vaylchenko", 333);
+        volodymyr = new CollegeStudent("Bursa 7", 123, 666666666);
+        vitalii = new CollegeStudent("Bursa 7", 123, 555555555);
+
+        SpecialStudent danylo, dmytro, davyd;
+        danylo = new SpecialStudent("Danylo", "Danylov", 333);
+        dmytro = new SpecialStudent("Bursa 7", 123, 666666666);
+        davyd = new SpecialStudent(1234567890);
     }
 }

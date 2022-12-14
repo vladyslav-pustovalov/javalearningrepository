@@ -1,4 +1,4 @@
-package thirdhomework;
+package thirdhomework.task4;
 
 public class User {
 

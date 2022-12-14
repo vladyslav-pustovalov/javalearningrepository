@@ -1,4 +1,7 @@
-package thirdhomework;
+package thirdhomework.task3;
+
+import thirdhomework.task3.Course;
+import thirdhomework.task3.Student;
 
 public class CollegeStudent extends Student {
 

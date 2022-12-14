@@ -1,4 +1,9 @@
-package thirdhomework;
+package thirdhomework.task3;
+
+import thirdhomework.task3.CollegeStudent;
+import thirdhomework.task3.Course;
+import thirdhomework.task3.SpecialStudent;
+import thirdhomework.task3.Student;
 
 public class Solutions {
 

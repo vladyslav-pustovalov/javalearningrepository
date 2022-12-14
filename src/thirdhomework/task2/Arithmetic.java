@@ -1,4 +1,4 @@
-package thirdhomework;
+package thirdhomework.task2;
 
 public class Arithmetic {
     public static void main(String[] args) {

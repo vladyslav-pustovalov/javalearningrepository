@@ -1,6 +1,8 @@
-package thirdhomework;
+package thirdhomework.task2;
 
-public class Adder extends Arithmetic{
+import thirdhomework.task2.Arithmetic;
+
+public class Adder extends Arithmetic {
     public static void main(String[] args) {
         System.out.println(check(3,2));
     }

@@ -1,4 +1,4 @@
-package thirdhomework;
+package thirdhomework.task3;
 
 import java.util.Date;
 

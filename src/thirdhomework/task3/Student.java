@@ -1,4 +1,6 @@
-package thirdhomework;
+package thirdhomework.task3;
+
+import thirdhomework.task3.Course;
 
 public class Student {
 

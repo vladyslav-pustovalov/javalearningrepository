@@ -1,6 +1,8 @@
-package thirdhomework;
+package thirdhomework.task3;
 
-public class SpecialStudent extends CollegeStudent{
+import thirdhomework.task3.CollegeStudent;
+
+public class SpecialStudent extends CollegeStudent {
 
     private long secretKey;
     private String email;

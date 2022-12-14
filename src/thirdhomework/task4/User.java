@@ -2,10 +2,10 @@ package thirdhomework.task4;
 
 public class User {
 
-    private String name, companyName, currency;
-    private int balance, monthsOfEmployment, salary;
+    private static String name, companyName, currency;
+    private static int balance, monthsOfEmployment, salary;
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -13,7 +13,7 @@ public class User {
         this.name = name;
     }
 
-    public String getCompanyName() {
+    public static String getCompanyName() {
         return companyName;
     }
 
@@ -29,7 +29,7 @@ public class User {
         this.currency = currency;
     }
 
-    public int getBalance() {
+    public static int getBalance() {
         return balance;
     }
 
@@ -62,32 +62,42 @@ public class User {
         this.salary = salary;
     }
 
-    public void paySalary () {
+    public static void paySalary() {
         balance = balance + salary;
+        System.out.println(balance);
     }
 
-    public void withdraw (int summ) {
+    public static void withdraw(int summ) {
         double commission;
-        if (summ < 1000) {
-            commission = summ * 0.05;
+        if (summ >= 0) {
+            if (summ < 1000) {
+                commission = summ * 0.05;
+            } else {
+                commission = summ * 0.1;
+            }
+            if ((summ + commission) < balance) {
+                balance -= (summ + commission);
+                System.out.println("Summ = " + summ + ",Commission = " + commission + ", new Balance = " + balance);
+            } else {
+                System.out.println("You are really poor");
+            }
         } else {
-            commission = summ * 0.1;
+            System.out.println("You can not withdraw minus sum");
         }
-        if ((summ + commission) < balance) {
-            balance -= (summ + commission);
-            System.out.println("Summ = "+summ+",Commission = "+commission+", new Banance = "+balance);
-        } else {
-            System.out.println("You are really poor");
-        }
+
     }
 
-    public void companyNameLenght () {
-        int companyNameLenght = companyName.length();
-        System.out.println(companyNameLenght);
+    public static void companyNameLength() {
+        int companyNameLength = companyName.length();
+        System.out.println(companyNameLength);
     }
 
-    public void increaseEmploymentMonth(int addMonth) {
-        monthsOfEmployment += addMonth;
-        System.out.println("Ok, months of employment = "+monthsOfEmployment);
+    public static void increaseEmploymentMonth(int addMonth) {
+        if (addMonth >= 0) {
+            monthsOfEmployment += addMonth;
+            System.out.println("Ok, months of employment = " + monthsOfEmployment);
+        } else {
+            System.out.println("You can not work less");
+        }
     }
 }

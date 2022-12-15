@@ -2,10 +2,14 @@ package thirdhomework.task4;
 
 public class User {
 
-    private static String name, companyName, currency;
-    private static int balance, monthsOfEmployment, salary;
+    private String name;
+    private String companyName;
+    private String currency;
+    private int balance;
+    private int monthsOfEmployment;
+    private int salary;
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
@@ -13,7 +17,7 @@ public class User {
         this.name = name;
     }
 
-    public static String getCompanyName() {
+    public String getCompanyName() {
         return companyName;
     }
 
@@ -29,7 +33,7 @@ public class User {
         this.currency = currency;
     }
 
-    public static int getBalance() {
+    public int getBalance() {
         return balance;
     }
 
@@ -62,12 +66,12 @@ public class User {
         this.salary = salary;
     }
 
-    public static void paySalary() {
-        balance = balance + salary;
+    public void paySalary() {
+        balance += salary;
         System.out.println(balance);
     }
 
-    public static void withdraw(int summ) {
+    public void withdraw(int summ) {
         double commission;
         if (summ >= 0) {
             if (summ < 1000) {
@@ -87,12 +91,12 @@ public class User {
 
     }
 
-    public static void companyNameLength() {
+    public void companyNameLength() {
         int companyNameLength = companyName.length();
         System.out.println(companyNameLength);
     }
 
-    public static void increaseEmploymentMonth(int addMonth) {
+    public void increaseEmploymentMonth(int addMonth) {
         if (addMonth >= 0) {
             monthsOfEmployment += addMonth;
             System.out.println("Ok, months of employment = " + monthsOfEmployment);

@@ -8,6 +8,16 @@ public class Course {
     private int hoursDuration;
     private String teacherName;
 
+    public Course(java.util.Date startDate, String name) {
+        this.startDate = startDate;
+        this.name = name;
+    }
+
+    public Course(int hoursDuration, String teacherName) {
+        this.hoursDuration = hoursDuration;
+        this.teacherName = teacherName;
+    }
+
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
@@ -33,16 +43,6 @@ public class Course {
     }
 
     public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
-    }
-
-    public Course (java.util.Date startDate, String name) {
-        this.startDate = startDate;
-        this.name = name;
-    }
-
-    public Course (int hoursDuration, String teacherName) {
-        this.hoursDuration = hoursDuration;
         this.teacherName = teacherName;
     }
 }

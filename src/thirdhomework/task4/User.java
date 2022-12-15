@@ -9,6 +9,15 @@ public class User {
     private int monthsOfEmployment;
     private int salary;
 
+    public User(String name, String companyName, String currency, int balance, int monthsOfEmployment, int salary) {
+        this.name = name;
+        this.companyName = companyName;
+        this.currency = currency;
+        this.balance = balance;
+        this.monthsOfEmployment = monthsOfEmployment;
+        this.salary = salary;
+    }
+
     public String getName() {
         return name;
     }
@@ -54,15 +63,6 @@ public class User {
     }
 
     public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    public User(String name, String companyName, String currency, int balance, int monthsOfEmployment, int salary) {
-        this.name = name;
-        this.companyName = companyName;
-        this.currency = currency;
-        this.balance = balance;
-        this.monthsOfEmployment = monthsOfEmployment;
         this.salary = salary;
     }
 

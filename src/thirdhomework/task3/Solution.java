@@ -10,7 +10,7 @@ public class Solution {
         Course sport = new Course(5, "Stitlana");
 
         Student ivan = new Student("Ivan", "Ivanov", 111);
-        Student igor = new Student("Igor","Igorov", 222);
+        Student igor = new Student("Igor", "Igorov", 222);
 
         CollegeStudent vasyl = new CollegeStudent("Vasyl", "Vaylchenko", 333);
         CollegeStudent volodymyr = new CollegeStudent("Volodymyr", "Volodymyrov", 666666666, "Bursa 7", 123, 7777777);

@@ -4,7 +4,7 @@ import thirdhomework.task2.Arithmetic;
 
 public class Adder extends Arithmetic {
 
-    public static boolean check (int a, int b) {
+    public static boolean check(int a, int b) {
         return a >= b;
     }
 }

@@ -60,7 +60,4 @@ public class Student {
         this.lastName = lastName;
         this.coursesTaken = coursesTaken;
     }
-
-    protected Student () {
-    }
 }

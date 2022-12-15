@@ -8,10 +8,6 @@ public class Course {
     private int hoursDuration;
     private String teacherName;
 
-    public java.util.Date getStartDate() {
-        return startDate;
-    }
-
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }

@@ -4,14 +4,15 @@ public abstract class Bank {
 
     long id;
     String bankCountry;
-    //Currency currency;
+    Currency currency;
     int numberOfEmployees;
     double avrSalaryOfEmployee;
     long rating;
     long totalCapital;
 
-    public Bank(long id, String bankCountry, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+    public Bank(long id, Currency currency, String bankCountry, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         this.id = id;
+        this.currency = currency;
         this.bankCountry = bankCountry;
         this.numberOfEmployees = numberOfEmployees;
         this.avrSalaryOfEmployee = avrSalaryOfEmployee;

@@ -2,13 +2,13 @@ package fourthhomework;
 
 public abstract class Bank {
 
-    long  id;
-    String bankCountry;
-    Currency currency;
-    int numberOfEmployees;
-    double avrSalaryOfEmployee;
-    long rating;
-    long totalCapital;
+    private long  id;
+    private String bankCountry;
+    private Currency currency;
+    private int numberOfEmployees;
+    private double avrSalaryOfEmployee;
+    private long rating;
+    private long totalCapital;
 
     public Bank(long id, Currency currency, String bankCountry, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         this.id = id;

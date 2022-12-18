@@ -8,7 +8,7 @@ public class User {
     int monthsOfEmployment;
     String companyName;
     int salary;
-    Bank bank;
+    Bank bank = USBank.usBank;
 
     public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;
@@ -17,7 +17,7 @@ public class User {
         this.monthsOfEmployment = monthsOfEmployment;
         this.companyName = companyName;
         this.salary = salary;
-        this.bank = bank;
+        setBank(bank);
     }
 
     public String toString() {

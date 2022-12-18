@@ -2,13 +2,17 @@ package fourthhomework;
 
 public class User {
 
-    long id;
-    String name;
-    double balance;
-    int monthsOfEmployment;
-    String companyName;
-    int salary;
-    Bank bank = USBank.usBank;
+    private long id;
+    private String name;
+    private double balance;
+    private int monthsOfEmployment;
+    private String companyName;
+    private int salary;
+    private Bank bank;
+
+    USBank usBank = new USBank(12345678910L, Currency.USD, "USA", 100500, 8000, 123, 1515151515151515L);
+    EUBank euBank = new EUBank(10987654321L, Currency.EUR, "Germany", 500, 18000, 11, 789789789789L);
+    ChinaBank chiBan = new ChinaBank(159753258L, Currency.USD, "China", 2000, 2300, 544, 123654789L);
 
     public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;
@@ -17,7 +21,7 @@ public class User {
         this.monthsOfEmployment = monthsOfEmployment;
         this.companyName = companyName;
         this.salary = salary;
-        setBank(bank);
+        this.bank = bank;
     }
 
     public String toString() {
@@ -79,4 +83,6 @@ public class User {
     public void setBank(Bank bank) {
         this.bank = bank;
     }
+
+
 }

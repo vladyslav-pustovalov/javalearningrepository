@@ -9,12 +9,17 @@ public class EUBank extends Bank {
 
     public EUBank(long id, Currency currency, String bankCountry, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, currency, bankCountry, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
+        this.limitOfWithdrawal = setLimitOfWithdrawal(currency);
+        this.limitOfFunding = setLimitOfFunding(currency);
+        this.monthlyRate = setMonthlyRate(currency);
     }
-
-    static EUBank euBank = new EUBank(654321, Currency.EUR, "Germany", 500, 20000, 151, 350000000);
 
     @Override
     public int getLimitOfWithdrawal() {
+        return limitOfWithdrawal;
+    }
+
+    private int setLimitOfWithdrawal(Currency currency) {
         if(currency == Currency.USD) {
             limitOfWithdrawal = 2000;
         } else if (currency == Currency.EUR) {
@@ -24,7 +29,11 @@ public class EUBank extends Bank {
     }
 
     @Override
-    int getLimitOfFunding() {
+    public int getLimitOfFunding() {
+        return limitOfFunding;
+    }
+
+    private int setLimitOfFunding(Currency currency) {
         if(currency == Currency.EUR) {
             limitOfFunding = 20000;
         } else if (currency == Currency.USD) {
@@ -34,7 +43,11 @@ public class EUBank extends Bank {
     }
 
     @Override
-    int getMonthlyRate() {
+    public int getMonthlyRate() {
+        return monthlyRate;
+    }
+
+    private int setMonthlyRate(Currency currency) {
         if(currency == Currency.USD) {
             monthlyRate = 0;
         } else if (currency == Currency.EUR) {
@@ -44,7 +57,11 @@ public class EUBank extends Bank {
     }
 
     @Override
-    int getCommission(int sum) {
+    public int getCommission(int sum) {
+        return commission;
+    }
+
+    private int setCommission (Currency currency, int sum) {
         if (currency == Currency.USD) {
             if (sum <= 1000) {
                 commission = 5;
@@ -63,7 +80,7 @@ public class EUBank extends Bank {
     }
 
     @Override
-    double moneyPaidMonthlyForSalary() {
-        return avrSalaryOfEmployee * numberOfEmployees;
+    public double moneyPaidMonthlyForSalary() {
+        return getAvrSalaryOfEmployee() * getNumberOfEmployees();
     }
 }

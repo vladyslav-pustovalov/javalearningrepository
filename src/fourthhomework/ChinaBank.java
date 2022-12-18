@@ -9,12 +9,17 @@ public class ChinaBank extends Bank {
 
     public ChinaBank(long id, Currency currency, String bankCountry, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, currency, bankCountry, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
+        this.limitOfWithdrawal = setLimitOfWithdrawal(currency);
+        this.limitOfFunding = setLimitOfFunding(currency);
+        this.monthlyRate = setMonthlyRate(currency);
     }
-
-    static ChinaBank chinaBank = new ChinaBank(123654, Currency.USD, "China", 2500, 5000, 28, 95000000);
 
     @Override
     public int getLimitOfWithdrawal() {
+        return limitOfWithdrawal;
+    }
+
+    private int setLimitOfWithdrawal (Currency currency) {
         if(currency == Currency.USD) {
             limitOfWithdrawal = 100;
         } else if (currency == Currency.EUR) {
@@ -22,9 +27,12 @@ public class ChinaBank extends Bank {
         }
         return limitOfWithdrawal;
     }
-
     @Override
-    int getLimitOfFunding() {
+    public int getLimitOfFunding() {
+        return limitOfFunding;
+    }
+
+    private int setLimitOfFunding(Currency currency) {
         if(currency == Currency.EUR) {
             limitOfFunding = 5000;
         } else if (currency == Currency.USD) {
@@ -34,7 +42,11 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    int getMonthlyRate() {
+    public int getMonthlyRate() {
+        return monthlyRate;
+    }
+
+    private int setMonthlyRate(Currency currency) {
         if(currency == Currency.USD) {
             monthlyRate = 1;
         } else if (currency == Currency.EUR) {
@@ -44,7 +56,11 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    int getCommission(int sum) {
+    public int getCommission(int sum) {
+        return commission;
+    }
+
+    private int setCommission (Currency currency, int sum) {
         if (currency == Currency.USD) {
             if (sum <= 1000) {
                 commission = 3;
@@ -63,7 +79,7 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    double moneyPaidMonthlyForSalary() {
-        return avrSalaryOfEmployee * numberOfEmployees;
+    public double moneyPaidMonthlyForSalary() {
+        return getAvrSalaryOfEmployee() * getNumberOfEmployees();
     }
 }

@@ -10,9 +10,9 @@ public class User {
     private int salary;
     private Bank bank;
 
-    USBank usBank = new USBank(12345678910L, Currency.USD, "USA", 100500, 8000, 123, 1515151515151515L);
-    EUBank euBank = new EUBank(10987654321L, Currency.EUR, "Germany", 500, 18000, 11, 789789789789L);
-    ChinaBank chiBan = new ChinaBank(159753258L, Currency.USD, "China", 2000, 2300, 544, 123654789L);
+    public static USBank usBank = new USBank(12345678910L, Currency.USD, "USA", 100500, 8000, 123, 1515151515151515L);
+    public static EUBank euBank = new EUBank(10987654321L, Currency.EUR, "Germany", 500, 18000, 11, 789789789789L);
+    public static ChinaBank chiBan = new ChinaBank(159753258L, Currency.USD, "China", 2000, 2300, 544, 123654789L);
 
     public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;

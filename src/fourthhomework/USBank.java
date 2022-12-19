@@ -55,7 +55,7 @@ public class USBank extends Bank {
     }
 
     @Override
-    public int getCommission(int sum) {
+    int getCommission(int sum) {
         return commission;
     }
 

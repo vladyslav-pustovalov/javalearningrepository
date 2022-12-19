@@ -3,6 +3,7 @@ package fourthhomework;
 public class BankSystemImpl implements BankSystem{
     @Override
     public void withdrawOfUser(User user, int amount) {
+        user.setBalance(user.getBalance() - (amount + user.getBank().getCommission(amount)));
 
     }
 
@@ -18,6 +19,6 @@ public class BankSystemImpl implements BankSystem{
 
     @Override
     public void paySalary(User user) {
-
+        user.setBalance(user.getBalance() + user.getSalary());
     }
 }

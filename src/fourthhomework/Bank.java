@@ -2,7 +2,7 @@ package fourthhomework;
 
 public abstract class Bank {
 
-    private long  id;
+    private long id;
     private String bankCountry;
     private Currency currency;
     private int numberOfEmployees;

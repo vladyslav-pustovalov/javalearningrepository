@@ -19,21 +19,22 @@ public class ChinaBank extends Bank {
         return limitOfWithdrawal;
     }
 
-    private int setLimitOfWithdrawal (Currency currency) {
-        if(currency == Currency.USD) {
+    private int setLimitOfWithdrawal(Currency currency) {
+        if (currency == Currency.USD) {
             limitOfWithdrawal = 100;
         } else if (currency == Currency.EUR) {
             limitOfWithdrawal = 150;
         }
         return limitOfWithdrawal;
     }
+
     @Override
     public int getLimitOfFunding() {
         return limitOfFunding;
     }
 
     private int setLimitOfFunding(Currency currency) {
-        if(currency == Currency.EUR) {
+        if (currency == Currency.EUR) {
             limitOfFunding = 5000;
         } else if (currency == Currency.USD) {
             limitOfFunding = 10000;
@@ -47,7 +48,7 @@ public class ChinaBank extends Bank {
     }
 
     private int setMonthlyRate(Currency currency) {
-        if(currency == Currency.USD) {
+        if (currency == Currency.USD) {
             monthlyRate = 1;
         } else if (currency == Currency.EUR) {
             monthlyRate = 0;
@@ -57,18 +58,13 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getCommission(int sum) {
-        return commission;
-    }
-
-    private int setCommission (Currency currency, int sum) {
-        if (currency == Currency.USD) {
+        if (getCurrency() == Currency.USD) {
             if (sum <= 1000) {
                 commission = 3;
             } else {
                 commission = 5;
             }
-        }
-        if (currency == Currency.EUR) {
+        } else if (getCurrency() == Currency.EUR) {
             if (sum <= 1000) {
                 commission = 10;
             } else {

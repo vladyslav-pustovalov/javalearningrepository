@@ -20,7 +20,7 @@ public class EUBank extends Bank {
     }
 
     private int setLimitOfWithdrawal(Currency currency) {
-        if(currency == Currency.USD) {
+        if (currency == Currency.USD) {
             limitOfWithdrawal = 2000;
         } else if (currency == Currency.EUR) {
             limitOfWithdrawal = 2200;
@@ -34,7 +34,7 @@ public class EUBank extends Bank {
     }
 
     private int setLimitOfFunding(Currency currency) {
-        if(currency == Currency.EUR) {
+        if (currency == Currency.EUR) {
             limitOfFunding = 20000;
         } else if (currency == Currency.USD) {
             limitOfFunding = 10000;
@@ -48,7 +48,7 @@ public class EUBank extends Bank {
     }
 
     private int setMonthlyRate(Currency currency) {
-        if(currency == Currency.USD) {
+        if (currency == Currency.USD) {
             monthlyRate = 0;
         } else if (currency == Currency.EUR) {
             monthlyRate = 1;
@@ -58,18 +58,13 @@ public class EUBank extends Bank {
 
     @Override
     public int getCommission(int sum) {
-        return commission;
-    }
-
-    private int setCommission (Currency currency, int sum) {
-        if (currency == Currency.USD) {
+        if (getCurrency() == Currency.USD) {
             if (sum <= 1000) {
                 commission = 5;
             } else {
                 commission = 7;
             }
-        }
-        if (currency == Currency.EUR) {
+        } else if (getCurrency() == Currency.EUR) {
             if (sum <= 1000) {
                 commission = 2;
             } else {

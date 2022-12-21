@@ -45,7 +45,7 @@ public class BankSystemImpl implements BankSystem {
                     fromUser.setBalance(fromUser.getBalance() - amount);
                     System.out.println("Ok");
                 } else {
-                    System.out.println(fromUser.getName()+" are too poor");
+                    System.out.println(fromUser.getName() + " are too poor");
                 }
             } else {
                 System.out.println("You can not transfer money between different banks");

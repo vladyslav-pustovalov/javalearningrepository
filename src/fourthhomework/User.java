@@ -83,6 +83,4 @@ public class User {
     public void setBank(Bank bank) {
         this.bank = bank;
     }
-
-
 }

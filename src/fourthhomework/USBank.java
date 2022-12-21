@@ -20,7 +20,7 @@ public class USBank extends Bank {
     }
 
     private int setLimitOfWithdrawal(Currency currency) {
-        if(currency == Currency.USD) {
+        if (currency == Currency.USD) {
             limitOfWithdrawal = 1000;
         } else if (currency == Currency.EUR) {
             limitOfWithdrawal = 1200;
@@ -34,7 +34,7 @@ public class USBank extends Bank {
     }
 
     private int setLimitOfFunding(Currency currency) {
-        if(currency == Currency.EUR) {
+        if (currency == Currency.EUR) {
             limitOfFunding = 10000;
         }
         return limitOfFunding;
@@ -46,7 +46,7 @@ public class USBank extends Bank {
     }
 
     private int setMonthlyRate(Currency currency) {
-        if(currency == Currency.USD) {
+        if (currency == Currency.USD) {
             monthlyRate = 1;
         } else if (currency == Currency.EUR) {
             monthlyRate = 2;
@@ -63,24 +63,6 @@ public class USBank extends Bank {
                 commission = 7;
             }
         } else if (getCurrency() == Currency.EUR) {
-            if (sum <= 1000) {
-                commission = 6;
-            } else {
-                commission = 8;
-            }
-        }
-        return commission;
-    }
-
-    private int setCommission(Currency currency, int sum) {
-        if (currency == Currency.USD) {
-            if (sum <= 1000) {
-                commission = 5;
-            } else {
-                commission = 7;
-            }
-        }
-        if (currency == Currency.EUR) {
             if (sum <= 1000) {
                 commission = 6;
             } else {

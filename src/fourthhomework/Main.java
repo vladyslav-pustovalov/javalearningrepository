@@ -14,8 +14,16 @@ public class Main {
         User vasyl = new User(666666, "Vasyl", 5400000, 66, "Walmart", 40000, User.chiBan);
 
         bankSystem.withdrawOfUser(ivan, 1001);
-        bankSystem.paySalary(ivan);
         bankSystem.fundUser(ivan, 5000);
-        bankSystem.transferMoney(ivan, denys, 5000);
+        bankSystem.transferMoney(ivan, artem, 5000);
+        bankSystem.paySalary(ivan);
+        bankSystem.withdrawOfUser(denys, 1001);
+        bankSystem.fundUser(denys, 5000);
+        bankSystem.transferMoney(denys, taras, 5000);
+        bankSystem.paySalary(taras);
+        bankSystem.withdrawOfUser(petro, 1001);
+        bankSystem.fundUser(petro, 5000);
+        bankSystem.transferMoney(petro, vasyl, 5000);
+        bankSystem.paySalary(vasyl);
     }
 }

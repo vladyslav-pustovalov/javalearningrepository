@@ -55,7 +55,20 @@ public class USBank extends Bank {
     }
 
     @Override
-    int getCommission(int sum) {
+    public int getCommission(int sum) {
+        if (getCurrency() == Currency.USD) {
+            if (sum <= 1000) {
+                commission = 5;
+            } else {
+                commission = 7;
+            }
+        } else if (getCurrency() == Currency.EUR) {
+            if (sum <= 1000) {
+                commission = 6;
+            } else {
+                commission = 8;
+            }
+        }
         return commission;
     }
 

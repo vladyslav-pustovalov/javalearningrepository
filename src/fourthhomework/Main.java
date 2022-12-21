@@ -4,6 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        BankSystemImpl bankSystem = new BankSystemImpl();
+
         User ivan = new User(111111, "Ivan", 100500, 12, "Apple", 15000, User.usBank);
         User artem = new User(222222, "Artem", 25000, 3, "Google", 8000, User.usBank);
         User denys = new User(333333, "Denys", 76000, 7, "Amazon", 16000, User.euBank);
@@ -11,6 +13,9 @@ public class Main {
         User petro = new User(555555, "Petro", 7000, 40, "Facebook", 20000, User.chiBan);
         User vasyl = new User(666666, "Vasyl", 5400000, 66, "Walmart", 40000, User.chiBan);
 
-
+        bankSystem.withdrawOfUser(ivan, 1001);
+        bankSystem.paySalary(ivan);
+        bankSystem.fundUser(ivan, 5000);
+        bankSystem.transferMoney(ivan, denys, 5000);
     }
 }

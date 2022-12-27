@@ -10,6 +10,7 @@ public class Bank {
         System.out.println(withdrawingMoneyFromAccount(100, 90));
         System.out.println(checkingWithdrawingMoney(balances, ownerNames, "Jane", 250));
         System.out.println(balanceFunding(balances, ownerNames, "Ann", 98));
+        System.out.println(ownerNames[0].length());
     }
 
     static String withdrawingMoneyFromAccount(double balance, double withdrawal) {

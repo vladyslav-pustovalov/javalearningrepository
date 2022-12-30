@@ -2,6 +2,7 @@ package fifthhomework;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class Room {
     private long id;
@@ -18,6 +19,19 @@ public class Room {
         this.dateAvailableFrom = dateAvailableFrom;
         this.hotelName = hotelName;
         this.cityName = cityName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Room)) return false;
+        Room room = (Room) o;
+        return getPrice() == room.getPrice() && getPersons() == room.getPersons() && getCityName().equals(room.getCityName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPrice(), getPersons(), getCityName());
     }
 
     public long getId() {

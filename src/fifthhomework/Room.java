@@ -8,11 +8,11 @@ public class Room {
     private long id;
     private int price;
     private int persons;
-    private Date dateAvailableFrom;
+    private Date dateAvailableFrom = new Date();
     private String hotelName;
     private String cityName;
 
-    public Room (long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
+    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
         this.id = id;
         this.price = price;
         this.persons = persons;
@@ -33,6 +33,8 @@ public class Room {
     public int hashCode() {
         return Objects.hash(getPrice(), getPersons(), getCityName());
     }
+
+
 
     public long getId() {
         return id;

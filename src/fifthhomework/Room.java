@@ -34,7 +34,17 @@ public class Room {
         return Objects.hash(getPrice(), getPersons(), getCityName());
     }
 
-
+    @Override
+    public String toString() {
+        return "Room { " +
+                "id = " + id +
+                ", price = " + price +
+                ", persons = " + persons +
+                ", date Available From = " + dateAvailableFrom +
+                ", hotel = '" + hotelName + '\'' +
+                ", city = '" + cityName + '\'' +
+                '}';
+    }
 
     public long getId() {
         return id;

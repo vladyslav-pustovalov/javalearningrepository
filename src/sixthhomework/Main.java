@@ -15,8 +15,8 @@ public class Main {
         User fifthUser = new User(0000000005L, "Vasyl", "Vasylenko", "Kyiv", 250);
         User sixthUser = new User(0000000006L, "Petro", "Danylenko", "Lviv", 150);
         User seventhUser = new User(0000000007L, "Ivan", "Givno", "Lviv", 300);
-        User eigthUser = new User(0000000008L, "Igor", "Kusub", "Lviv", 0);
-        User ninthUser = new User(0000000009L, "Vasyl", "Ivanov", "Odessa", 180);
+        //User eigthUser = new User(0000000008L, "Igor", "Kusub", "Lviv", 0);
+        //User ninthUser = new User(0000000009L, "Vasyl", "Ivanov", "Odessa", 180);
         User tenthUser = new User(0000000010L, "Artem", "Andriiv", "Dnipro", 600);
     }
 }

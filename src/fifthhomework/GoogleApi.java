@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class GoogleApi implements API {
 
-    private static ArrayList<Room> googleRooms;
+    private static ArrayList<Room> googleRooms = new ArrayList<>();
 
     static {
         googleRooms.add(new Room(311111111L, 100, 1, new Date(123, 1, 21), "Kremen", "Kyiv"));

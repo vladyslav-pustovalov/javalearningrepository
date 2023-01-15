@@ -5,17 +5,14 @@ import java.util.List;
 
 public class Controller {
 
-    static API api = new API() {
-        @Override
-        public ArrayList<Room> findRooms(int price, int persons, String city, String hotel) {
-            return new ArrayList<Room>();
-        }
+    static API bookingComApi = new BookingComApi() {
     };
-    static BookingComApi bookingComApi = new BookingComApi();
-    static TripAdvisorApi tripAdvisorApi = new TripAdvisorApi();
-    static GoogleApi googleApi = new GoogleApi();
+    static API tripAdvisorApi = new TripAdvisorApi() {
+    };
+    static API googleApi = new GoogleApi() {
+    };
 
-    static List<API> apiList;
+    static List<API> apiList = new ArrayList<>();
 
     static {
         apiList.add(bookingComApi);
@@ -25,7 +22,14 @@ public class Controller {
 
     public ArrayList<Room> requestRooms(int price, int persons, String city, String hotel) {
         ArrayList<Room> result = new ArrayList<>();
-
+        result.addAll(bookingComApi.findRooms(price, persons, city, hotel));
+        result.addAll(tripAdvisorApi.findRooms(price, persons, city, hotel));
+        result.addAll(googleApi.findRooms(price, persons, city, hotel));
+        if (result.isEmpty()) {
+            System.out.println("There is no any rooms according to your request");
+        } else {
+            System.out.println(result);
+        }
         return result;
     }
 

@@ -19,7 +19,7 @@ public class TripAdvisorApi implements API {
     public ArrayList<Room> findRooms(int price, int persons, String city, String hotel) {
         ArrayList<Room> result = new ArrayList<>();
         for (Room room : tripRooms) {
-            if (room.getPrice() == price && room.getPersons() == persons && room.getCityName().equals(city) && room.getHotelName().equals(hotel)) {
+            if (room.getPrice() <= price && room.getPersons() <= persons && room.getCityName().equals(city) && room.getHotelName().equals(hotel)) {
                 result.add(room);
             }
         }

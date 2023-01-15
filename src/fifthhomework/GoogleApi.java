@@ -19,7 +19,7 @@ public class GoogleApi implements API {
     @Override
     public ArrayList<Room> findRooms(int price, int persons, String city, String hotel) {
         ArrayList<Room> result = new ArrayList<>();
-        googleRooms.stream().filter(room -> room.getPrice() == price && room.getPersons() == persons && room.getCityName().equals(city) && room.getHotelName().equals(hotel))
+        googleRooms.stream().filter(room -> room.getPrice() <= price && room.getPersons() <= persons && room.getCityName().equals(city) && room.getHotelName().equals(hotel))
                 .collect(Collectors.toList());
         return result;
     }

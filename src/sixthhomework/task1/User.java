@@ -1,4 +1,6 @@
-package sixthhomework;
+package sixthhomework.task1;
+
+import java.util.Objects;
 
 public class User {
     private long id;
@@ -13,6 +15,30 @@ public class User {
         this.lastName = lastName;
         this.city = city;
         this.balance = balance;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && balance == user.balance && firstName.equals(user.firstName) && lastName.equals(user.lastName) && city.equals(user.city);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, city, balance);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 
     public long getId() {

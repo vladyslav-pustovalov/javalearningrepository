@@ -1,7 +1,8 @@
-package sixthhomework;
+package sixthhomework.task1;
 
 import fourthhomework.Currency;
-import sixthhomework.User;
+
+import java.util.Objects;
 
 public class Order {
     private long id;
@@ -18,6 +19,31 @@ public class Order {
         this.itemName = itemName;
         this.shopIdentificator = shopIdentificator;
         this.user = user;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return id == order.id && price == order.price && currency == order.currency && itemName.equals(order.itemName) && shopIdentificator.equals(order.shopIdentificator) && user.equals(order.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price, currency, itemName, shopIdentificator, user);
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", currency=" + currency +
+                ", itemName='" + itemName + '\'' +
+                ", shopIdentificator='" + shopIdentificator + '\'' +
+                ", user=" + user +
+                '}';
     }
 
     public long getId() {

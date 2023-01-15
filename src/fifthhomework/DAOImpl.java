@@ -2,29 +2,30 @@ package fifthhomework;
 
 import java.util.ArrayList;
 
-public class DAOImpl implements DAO{
+public class DAOImpl implements DAO {
 
 
     @Override
     public Room save(Room room) {
-        System.out.println("Save "+room.toString());
+        System.out.println("Save " + room.toString());
         return room;
     }
 
     @Override
     public boolean delete(Room room) {
-        System.out.println("Delete "+room.toString());
+        System.out.println("Delete " + room.toString());
         return false;
     }
 
     @Override
     public boolean update(Room room) {
-        System.out.println("Update "+room.toString());
+        System.out.println("Update " + room.toString());
         return false;
     }
 
     @Override
     public Room findById(long id) {
+        System.out.println("Find by room with ID " + id);
         return null;
     }
 }

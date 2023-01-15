@@ -6,6 +6,7 @@ import sixthhomework.task1.User;
 
 import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -114,6 +115,11 @@ public class Main {
         Set<Order> uniqueOrders = new HashSet<>();
         uniqueOrders.addAll(orderList);
 
+        /* Another mathod)))
+        List<Order> uniqueOrders = new ArrayList<>();
+        uniqueOrders = orderList.stream().distinct().collect(Collectors.toList());
+         */
+
         for (Order order: uniqueOrders) {
             System.out.println("Unique order is "+order);
         }
@@ -130,27 +136,19 @@ public class Main {
         System.out.println("----------------------------");
 
         List<Order> ordersUSD = new ArrayList<>();
-        int i;
-        for (i = 0; i < orderList.size(); i++) {
-            if (orderList.get(i).getCurrency().equals(Currency.USD)) {
-                ordersUSD.add(orderList.get(i));
-            }
-        }
+
 
         for (Order order : ordersUSD) {
             System.out.println("USD order is "+order);
         }
 
         List<Order> ordersEUR = new ArrayList<>();
-        for (Order order : orderList) {
-            if (order.getCurrency().equals(Currency.EUR)) {
-                ordersUSD.add(order);
-            }
-        }
+
 
         for (Order order : ordersEUR) {
             System.out.println("EUR order is "+order);
         }
 
+        System.out.println("------------------------");
     }
 }

@@ -1,6 +1,5 @@
-package fifthhomework;
+package fifthhomework.model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 

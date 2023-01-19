@@ -1,4 +1,6 @@
-package fifthhomework;
+package fifthhomework.DB;
+
+import fifthhomework.model.Room;
 
 public interface DAO {
 

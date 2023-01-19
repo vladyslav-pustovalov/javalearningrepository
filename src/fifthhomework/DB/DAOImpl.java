@@ -1,6 +1,6 @@
-package fifthhomework;
+package fifthhomework.DB;
 
-import java.util.ArrayList;
+import fifthhomework.model.Room;
 
 public class DAOImpl implements DAO {
 

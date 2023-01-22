@@ -4,7 +4,7 @@ import fourthhomework.Currency;
 
 import java.util.Objects;
 
-public class Order {
+public class Order  implements Comparable<Order> {
     private long id;
     private int price;
     private Currency currency;
@@ -44,6 +44,21 @@ public class Order {
                 ", shopIdentificator='" + shopIdentificator + '\'' +
                 ", user=" + user +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Order order) {
+        long l1 = this.id;
+        long l2 = order.id;
+        int result;
+        if (l1 < l2) {
+            result = -1;
+        } else if (l1 == l2) {
+            result = 0;
+        } else {
+            result = 1;
+        }
+        return result;
     }
 
     public long getId() {

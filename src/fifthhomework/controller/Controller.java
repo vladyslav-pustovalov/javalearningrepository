@@ -28,7 +28,8 @@ public class Controller {
 
 
     /**
-     *This method returns all requested rooms from all APIs
+     * This method returns all requested rooms from all APIs
+     *
      * @param price   the price
      * @param persons the persons
      * @param city    the city

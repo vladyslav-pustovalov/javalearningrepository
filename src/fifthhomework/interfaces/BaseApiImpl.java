@@ -21,10 +21,8 @@ public class BaseApiImpl implements API {
 
     @Override
     public List<Room> findRooms(int price, int persons, String city, String hotel) {
-        List<Room> result = new ArrayList<>();
-        rooms.stream()
+        return rooms.stream()
                 .filter(room -> room.getPrice() <= price && room.getPersons() <= persons && room.getCityName().equals(city) && room.getHotelName().equals(hotel))
                 .collect(Collectors.toList());
-        return result;
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 public class BookingComApi extends BaseApiImpl {
 
     public BookingComApi() {
-        List <Room> bookingRooms = new ArrayList<>();
+        List<Room> bookingRooms = new ArrayList<>();
         bookingRooms.add(new Room(111111111L, 100, 2, new Date(123, 1, 20), "Kremen", "Kremenchuk"));
         bookingRooms.add(new Room(122222222L, 200, 1, new Date(123, 1, 25), "Kremen", "Kremenchuk"));
         bookingRooms.add(new Room(133333333L, 300, 3, new Date(123, 1, 24), "Hilton", "Kremenchuk"));

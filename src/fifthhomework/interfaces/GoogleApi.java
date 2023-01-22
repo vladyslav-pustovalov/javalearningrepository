@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class GoogleApi extends BaseApiImpl {
 
-    public GoogleApi (){
+    public GoogleApi() {
         List<Room> googleRooms = new ArrayList<>();
         googleRooms.add(new Room(311111111L, 100, 1, new Date(123, 1, 21), "Kremen", "Kyiv"));
         googleRooms.add(new Room(322222222L, 100, 1, new Date(123, 1, 22), "Kremen", "Kyiv"));

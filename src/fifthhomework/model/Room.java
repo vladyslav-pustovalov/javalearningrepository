@@ -7,7 +7,7 @@ public class Room {
     private long id;
     private int price;
     private int persons;
-    private Date dateAvailableFrom = new Date();
+    private Date dateAvailableFrom;
     private String hotelName;
     private String cityName;
 

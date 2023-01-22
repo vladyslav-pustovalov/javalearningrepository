@@ -8,7 +8,7 @@ import java.util.List;
 
 public class TripAdvisorApi extends BaseApiImpl {
 
-    public TripAdvisorApi () {
+    public TripAdvisorApi() {
         List<Room> tripRooms = new ArrayList<>();
         tripRooms.add(new Room(211111111L, 300, 2, new Date(123, 1, 20), "Kremen", "Kremenchuk"));
         tripRooms.add(new Room(222222222L, 200, 3, new Date(123, 1, 24), "Hilton", "Kyiv"));

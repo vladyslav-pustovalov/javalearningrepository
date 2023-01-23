@@ -67,7 +67,7 @@ public class Main {
         });
 
         for (Order order : orderList) {
-            System.out.println("Decrease price sorted order is "+order);
+            System.out.println("Decrease price sorted order is " + order);
         }
 
         System.out.println("----------------------------------");
@@ -85,7 +85,7 @@ public class Main {
         });
 
         for (Order order : orderList) {
-            System.out.println("Increase price and city sorted order is "+order);
+            System.out.println("Increase price and city sorted order is " + order);
         }
 
         System.out.println("----------------------------");
@@ -107,21 +107,21 @@ public class Main {
         });
 
         for (Order order : orderList) {
-            System.out.println("Item name, Shop identificator, city sorted order is "+order);
+            System.out.println("Item name, Shop identificator, city sorted order is " + order);
         }
 
-        System.out.println("--------------------");
+        System.out.println("--------------------------");
 
         Set<Order> uniqueOrders = new HashSet<>();
         uniqueOrders.addAll(orderList);
 
-        /* Another mathod)))
-        List<Order> uniqueOrders = new ArrayList<>();
+        /* Another method)))
+        List<Order> uniqueOrders;
         uniqueOrders = orderList.stream().distinct().collect(Collectors.toList());
          */
 
-        for (Order order: uniqueOrders) {
-            System.out.println("Unique order is "+order);
+        for (Order order : uniqueOrders) {
+            System.out.println("Unique order is " + order);
         }
 
         System.out.println("---------------------------");
@@ -129,26 +129,29 @@ public class Main {
         Predicate<Order> pr = order -> order.getPrice() < 1500;
         orderList.removeIf(pr);
 
-        for (Order order: uniqueOrders) {
-            System.out.println("Order that costs less than 1500 is "+order);
+        for (Order order : uniqueOrders) {
+            System.out.println("Order that costs less than 1500 is " + order);
         }
 
         System.out.println("----------------------------");
 
         List<Order> ordersUSD = new ArrayList<>();
-
-
-        for (Order order : ordersUSD) {
-            System.out.println("USD order is "+order);
-        }
-
         List<Order> ordersEUR = new ArrayList<>();
 
-
-        for (Order order : ordersEUR) {
-            System.out.println("EUR order is "+order);
+        for (Order order : orderList) {
+            if (order.getCurrency() == Currency.USD) {
+                ordersUSD.add(order);
+            } else if (order.getCurrency() == Currency.EUR) {
+                ordersEUR.add(order);
+            }
         }
 
+        for (Order order : ordersUSD) {
+            System.out.println("USD " + order);
+        }
+        for (Order order : ordersEUR) {
+            System.out.println("EUR " + order);
+        }
         System.out.println("------------------------");
     }
 }

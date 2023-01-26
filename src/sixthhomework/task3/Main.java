@@ -36,16 +36,16 @@ public class Main {
         userList.add(ninthUser);
         userList.add(tenthUser);
 
-        Order firstOrder = new Order(0000000001L, 100, Currency.USD, "Dildo", "Strawberry", tenthUser);
-        Order secondOrder = new Order(0000000002L, 200, Currency.USD, "Strapon", "Adults", ninthUser);
-        Order thirdOrder = new Order(0000000003L, 500, Currency.EUR, "Pocket Pussy", "Night entertainment", eigthUser);
-        Order fourthOrder = new Order(0000000004L, 800, Currency.EUR, "Double pocket pussy", "Beside of twos", seventhUser);
-        Order fifthOrder = new Order(0000000005L, 140, Currency.USD, "Dildo", "Bonga bonga", sixthUser);
-        Order sixthOrder = new Order(0000000006L, 155, Currency.USD, "Dildo", "Strawberry", fifthUser);
-        Order seventhOrder = new Order(0000000007L, 190, Currency.EUR, "Strapon", "Adults", fourthUser);
-        Order eigthOrder = new Order(00000000011L, 290, Currency.EUR, "Pocket Pussy", "Night entertainment", thirdUser);
-        Order ninthOrder = new Order(00000000002L, 200, Currency.USD, "Strapon", "Adults", ninthUser);
-        Order tenthOrder = new Order(00000000005L, 140, Currency.USD, "Dildo", "Bonga bonga", sixthUser);
+        Order firstOrder = new Order(1L, 100, Currency.USD, "Dildo", "Strawberry", tenthUser);
+        Order secondOrder = new Order(2L, 200, Currency.USD, "Strapon", "Adults", ninthUser);
+        Order thirdOrder = new Order(3L, 500, Currency.EUR, "Pocket Pussy", "Night entertainment", eigthUser);
+        Order fourthOrder = new Order(4L, 800, Currency.EUR, "Double pocket pussy", "Beside of twos", seventhUser);
+        Order fifthOrder = new Order(5L, 140, Currency.USD, "Dildo", "Bonga bonga", sixthUser);
+        Order sixthOrder = new Order(6L, 155, Currency.USD, "Dildo", "Strawberry", fifthUser);
+        Order seventhOrder = new Order(8L, 190, Currency.EUR, "Strapon", "Adults", fourthUser);
+        Order eigthOrder = new Order(9L, 290, Currency.EUR, "Pocket Pussy", "Night entertainment", thirdUser);
+        Order ninthOrder = new Order(2L, 200, Currency.USD, "Strapon", "Adults", ninthUser);
+        Order tenthOrder = new Order(5L, 140, Currency.USD, "Dildo", "Bonga bonga", sixthUser);
 
         Set<Order> orderSet = new TreeSet<>();
         orderSet.add(firstOrder);
@@ -70,7 +70,7 @@ public class Main {
                 }
             }
 
-           List<Order> lastNameOrder = new ArrayList<>();
+           List<Order> lastNameOrder;
             lastNameOrder = orderSet.stream().filter(order ->
                order.getUser().getLastName().equals(lastNameInOrder)
            ).collect(Collectors.toList());

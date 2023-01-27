@@ -12,16 +12,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        User firstUser = new User(0000000001L, "Ivan", "Kovalenko", "Kremenchuk", 100);
-        User secondUser = new User(0000000002L, "Danylo", "Glushko", "Kremenchuk", 150);
-        User thirdUser = new User(0000000003L, "Oleg", "Sydorenko", "Kremenchuk", 200);
-        User fourthUser = new User(0000000004L, "Igor", "Valylenko", "Kyiv", 175);
-        User fifthUser = new User(0000000005L, "Vasyl", "Vasylenko", "Kyiv", 250);
-        User sixthUser = new User(0000000006L, "Petro", "Danylenko", "Lviv", 150);
-        User seventhUser = new User(0000000007L, "Ivan", "Givno", "Lviv", 300);
-        User eigthUser = new User(0000000011L, "Igor", "Kusub", "Lviv", 0);
-        User ninthUser = new User(0000000012L, "Vasyl", "Ivanov", "Odessa", 180);
-        User tenthUser = new User(0000000010L, "Artem", "Andriiv", "Dnipro", 600);
+        User firstUser = new User(1L, "Ivan", "Kovalenko", "Kremenchuk", 100);
+        User secondUser = new User(2L, "Danylo", "Glushko", "Kremenchuk", 150);
+        User thirdUser = new User(3L, "Oleg", "Sydorenko", "Kremenchuk", 200);
+        User fourthUser = new User(4L, "Igor", "Valylenko", "Kyiv", 175);
+        User fifthUser = new User(5L, "Vasyl", "Vasylenko", "Kyiv", 250);
+        User sixthUser = new User(6L, "Petro", "Danylenko", "Lviv", 150);
+        User seventhUser = new User(7L, "Ivan", "Givno", "Lviv", 300);
+        User eigthUser = new User(8L, "Igor", "Kusub", "Lviv", 0);
+        User ninthUser = new User(9L, "Vasyl", "Ivanov", "Odessa", 180);
+        User tenthUser = new User(10L, "Artem", "Andriiv", "Dnipro", 600);
 
         List<User> userList = new ArrayList<>();
         userList.add(firstUser);
@@ -35,16 +35,16 @@ public class Main {
         userList.add(ninthUser);
         userList.add(tenthUser);
 
-        Order firstOrder = new Order(0000000001L, 100, Currency.USD, "Dildo", "Strawberry", tenthUser);
-        Order secondOrder = new Order(0000000002L, 200, Currency.USD, "Strapon", "Adults", ninthUser);
-        Order thirdOrder = new Order(0000000003L, 500, Currency.EUR, "Pocket Pussy", "Night entertainment", eigthUser);
-        Order fourthOrder = new Order(0000000004L, 800, Currency.EUR, "Double pocket pussy", "Beside of twos", seventhUser);
-        Order fifthOrder = new Order(0000000005L, 140, Currency.USD, "Dildo", "Bonga bonga", sixthUser);
-        Order sixthOrder = new Order(0000000006L, 155, Currency.USD, "Dildo", "Strawberry", fifthUser);
-        Order seventhOrder = new Order(0000000007L, 190, Currency.EUR, "Strapon", "Adults", fourthUser);
-        Order eigthOrder = new Order(00000000011L, 290, Currency.EUR, "Pocket Pussy", "Night entertainment", thirdUser);
-        Order ninthOrder = new Order(00000000002L, 200, Currency.USD, "Strapon", "Adults", ninthUser);
-        Order tenthOrder = new Order(00000000005L, 140, Currency.USD, "Dildo", "Bonga bonga", sixthUser);
+        Order firstOrder = new Order(1L, 100, Currency.USD, "Dildo", "Strawberry", tenthUser);
+        Order secondOrder = new Order(2L, 200, Currency.USD, "Strapon", "Adults", ninthUser);
+        Order thirdOrder = new Order(3L, 500, Currency.EUR, "Pocket Pussy", "Night entertainment", eigthUser);
+        Order fourthOrder = new Order(4L, 800, Currency.EUR, "Double pocket pussy", "Beside of twos", seventhUser);
+        Order fifthOrder = new Order(5L, 140, Currency.USD, "Dildo", "Bonga bonga", sixthUser);
+        Order sixthOrder = new Order(6L, 155, Currency.USD, "Dildo", "Strawberry", fifthUser);
+        Order seventhOrder = new Order(7L, 190, Currency.EUR, "Strapon", "Adults", fourthUser);
+        Order eigthOrder = new Order(8L, 290, Currency.EUR, "Pocket Pussy", "Night entertainment", thirdUser);
+        Order ninthOrder = new Order(2L, 200, Currency.USD, "Strapon", "Adults", ninthUser);
+        Order tenthOrder = new Order(5L, 140, Currency.USD, "Dildo", "Bonga bonga", sixthUser);
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(firstOrder);
@@ -158,17 +158,13 @@ public class Main {
 
         List<Order> uniqueCityOrders = new ArrayList<>();
         uniqueCityOrders.add(orderList.get(0));
-//        for (int i = 1; i < orderList.size()-1; i++) {
-//            for (int j = 0; j < uniqueCityOrders.size(); j++) {
-//                if (!orderList.get(i).getUser().getCity().equals(uniqueCityOrders.get(j).getUser().getCity())) {
-//                    uniqueCityOrders.add(orderList.get(i));
-//                }
-//            }
-//        }
-
-        for (int i = 1; i < orderList.size()-1; i++) {
-            if (uniqueCityOrders.get(i-1).getUser().getCity().equals(orderList.get(i).getUser().getCity())) {
-                uniqueCityOrders.add(orderList.get(i));
+        int orderListSize = orderList.size()-1;
+        int uniqueCityOrdersSize = uniqueCityOrders.size();
+        for (int i = 1; i < orderListSize; i++) {
+            for (int j = 0; j < uniqueCityOrdersSize; j++) {
+                if (!orderList.get(i).getUser().getCity().equals(uniqueCityOrders.get(j).getUser().getCity())) {
+                    uniqueCityOrders.add(orderList.get(i));
+                }
             }
         }
 

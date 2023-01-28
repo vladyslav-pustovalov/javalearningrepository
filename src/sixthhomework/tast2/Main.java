@@ -157,12 +157,13 @@ public class Main {
         System.out.println("------------------------");
 
         List<Order> uniqueCityOrders = new ArrayList<>();
+        orderList = orderList.stream().distinct().collect(Collectors.toList());
         uniqueCityOrders.add(orderList.get(0));
         int orderListSize = orderList.size()-1;
         int uniqueCityOrdersSize = uniqueCityOrders.size();
         for (int i = 1; i < orderListSize; i++) {
             for (int j = 0; j < uniqueCityOrdersSize; j++) {
-                if (!orderList.get(i).getUser().getCity().equals(uniqueCityOrders.get(j).getUser().getCity())) {
+                if (!orderList.get(i).getUser().getCity().equalsIgnoreCase(uniqueCityOrders.get(j).getUser().getCity())) {
                     uniqueCityOrders.add(orderList.get(i));
                 }
             }

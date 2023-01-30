@@ -8,7 +8,7 @@ public interface DAO {
 
     boolean delete(Room room);
 
-    boolean update(Room room);
+    Room update(Room room);
 
-    Room findById(long id);
+    long findById(long id);
 }

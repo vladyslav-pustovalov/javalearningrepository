@@ -14,18 +14,18 @@ public class DAOImpl implements DAO {
     @Override
     public boolean delete(Room room) {
         System.out.println("Delete " + room.toString());
-        return false;
+        return true;
     }
 
     @Override
-    public boolean update(Room room) {
+    public Room update(Room room) {
         System.out.println("Update " + room.toString());
-        return false;
+        return room;
     }
 
     @Override
-    public Room findById(long id) {
-        System.out.println("Find by room with ID " + id);
-        return null;
+    public long findById(long id) {
+        System.out.println("Find room by ID " + id);
+        return id;
     }
 }

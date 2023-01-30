@@ -159,18 +159,36 @@ public class Main {
         List<Order> uniqueCityOrders = new ArrayList<>();
         orderList = orderList.stream().distinct().collect(Collectors.toList());
         uniqueCityOrders.add(orderList.get(0));
-        int orderListSize = orderList.size()-1;
-        int uniqueCityOrdersSize = uniqueCityOrders.size();
-        for (int i = 1; i < orderListSize; i++) {
-            for (int j = 0; j < uniqueCityOrdersSize; j++) {
-                if (!orderList.get(i).getUser().getCity().equalsIgnoreCase(uniqueCityOrders.get(j).getUser().getCity())) {
-                    uniqueCityOrders.add(orderList.get(i));
-                }
-            }
-        }
+//        int orderListSize = orderList.size()-1;
+//        int uniqueCityOrdersSize = uniqueCityOrders.size();
+//        for (int i = 1; i < orderListSize; i++) {
+//            for (int j = 0; j < uniqueCityOrdersSize; j++) {
+//                if (!orderList.get(i).getUser().getCity().equalsIgnoreCase(uniqueCityOrders.get(j).getUser().getCity())) {
+//                    uniqueCityOrders.add(orderList.get(i));
+//                }
+//            }
+//        }
 
-        for (Order order : uniqueCityOrders) {
-            System.out.println("Order with unique city is "+order);
+
+
+        for (List list : splitOrdersByCities(orderList)) {
+            System.out.println("Order with unique city is "+list);
         }
+    }
+
+    public static List<List<Order>> splitOrdersByCities (List<Order> orderList) {
+        Set<String> cities = orderList.stream()
+                .map(Order::getUser)
+                .map(User::getCity)
+                .collect(Collectors.toSet());
+        List<List<Order>> result = new ArrayList<>();
+        final List<Order> temp = orderList;
+        cities.forEach(city -> {
+            List<Order> orders = temp.stream()
+                    .filter(order -> order.getUser().getCity().equalsIgnoreCase(city))
+                    .toList();
+            result.add(orders);
+        });
+        return result;
     }
 }

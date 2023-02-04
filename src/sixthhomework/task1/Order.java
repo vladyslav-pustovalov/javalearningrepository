@@ -4,7 +4,7 @@ import fourthhomework.Currency;
 
 import java.util.Objects;
 
-public class Order  implements Comparable<Order> {
+public class Order implements Comparable<Order> {
     private long id;
     private int price;
     private Currency currency;

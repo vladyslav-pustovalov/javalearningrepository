@@ -33,15 +33,15 @@ public class Main {
 
     }
 
-    static void checkLastName (Set<Order> orderSet, String lastName) {
+    static void checkLastName(Set<Order> orderSet, String lastName) {
         List<Order> lastNameOrder;
         lastNameOrder = orderSet.stream().filter(order ->
                 order.getUser().getLastName().equals(lastName)
         ).collect(Collectors.toList());
-        System.out.println("Order with LastName "+lastName+" is "+lastNameOrder);
+        System.out.println("Order with LastName " + lastName + " is " + lastNameOrder);
     }
 
-    static void showOrderWithLargestPrice (Set<Order> orderSet) {
+    static void showOrderWithLargestPrice(Set<Order> orderSet) {
         List<Order> orderArrayList = new ArrayList<>();
         orderArrayList.addAll(orderSet);
         Order maxPriceOrder = orderArrayList.get(0);
@@ -50,10 +50,10 @@ public class Main {
                 maxPriceOrder = o1;
             }
         }
-        System.out.println("Order with max price is "+maxPriceOrder);
+        System.out.println("Order with max price is " + maxPriceOrder);
     }
 
-    static void deleteOrdersUSD (Set<Order> orderSet) {
+    static void deleteOrdersUSD(Set<Order> orderSet) {
         List<Order> orderList = new ArrayList<>(orderSet);
         Iterator<Order> iterator = orderList.iterator();
         while (iterator.hasNext()) {
@@ -63,8 +63,8 @@ public class Main {
             }
         }
 
-        for (Order order:orderSet) {
-            System.out.println("Order with nonUSD is "+order);
+        for (Order order : orderSet) {
+            System.out.println("Order with nonUSD is " + order);
         }
     }
 }

@@ -41,7 +41,7 @@ public class Main {
 
     }
 
-    static void sortByPriceDSC (List<Order> list){
+    static void sortByPriceDSC(List<Order> list) {
         list.sort(new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
@@ -55,7 +55,7 @@ public class Main {
         }
     }
 
-    static void sortByPriceAndCity (List<Order> list) {
+    static void sortByPriceAndCity(List<Order> list) {
         list.sort(new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
@@ -73,7 +73,7 @@ public class Main {
         }
     }
 
-    static void sortByItemNameAndShopIdentificator (List<Order> list) {
+    static void sortByItemNameAndShopIdentificator(List<Order> list) {
         list.sort(new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
@@ -95,7 +95,7 @@ public class Main {
         }
     }
 
-    static void deleteDuplicatesBySet (List<Order> list) {
+    static void deleteDuplicatesBySet(List<Order> list) {
         Set<Order> uniqueOrders = new HashSet<>();
         uniqueOrders.addAll(list);
 
@@ -104,7 +104,7 @@ public class Main {
         }
     }
 
-    static void deleteDuplicatesByStream (List<Order> list) {
+    static void deleteDuplicatesByStream(List<Order> list) {
         List<Order> uniqueOrders;
         uniqueOrders = list.stream().distinct().collect(Collectors.toList());
 
@@ -113,7 +113,7 @@ public class Main {
         }
     }
 
-    static void lessThan1500ByPredicate (List<Order> list) {
+    static void lessThan1500ByPredicate(List<Order> list) {
         Predicate<Order> pr = order -> order.getPrice() < 1500;
         list.removeIf(pr);
 
@@ -122,15 +122,15 @@ public class Main {
         }
     }
 
-    static void lessThan1500ByLambda (List<Order> list) {
-            list.removeIf(order -> order.getPrice() < 1500);
+    static void lessThan1500ByLambda(List<Order> list) {
+        list.removeIf(order -> order.getPrice() < 1500);
 
         for (Order order : list) {
             System.out.println("Order that costs less than 1500 is " + order);
         }
     }
 
-    static void separateForTwoCurrencies (List<Order> list) {
+    static void separateForTwoCurrencies(List<Order> list) {
         List<Order> ordersUSD = new ArrayList<>();
         List<Order> ordersEUR = new ArrayList<>();
 
@@ -150,7 +150,7 @@ public class Main {
         }
     }
 
-    static void separateByUniqueCity (List<Order> list) {
+    static void separateByUniqueCity(List<Order> list) {
         List<List<Order>> splitOrdersByCities = new ArrayList<>();
         Set<String> cities = new HashSet<>();
         cities = list.stream()
@@ -165,8 +165,8 @@ public class Main {
             splitOrdersByCities.add(orders);
         });
 
-        for (List<Order> sepList: splitOrdersByCities) {
-            System.out.println("List with unique user's city in the order "+sepList);
+        for (List<Order> sepList : splitOrdersByCities) {
+            System.out.println("List with unique user's city in the order " + sepList);
         }
     }
 }

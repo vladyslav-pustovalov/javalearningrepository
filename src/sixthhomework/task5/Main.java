@@ -63,7 +63,6 @@ public class Main {
         System.out.println("----------------------------------------------------");
 
 
-
         List<String> oneStrArrayList = new ArrayList<>(1000);
         //Filling ArrayList with 1000 random strings
         for (int i = 0; i < 1000; i++) {
@@ -121,25 +120,25 @@ public class Main {
         System.out.println("----------------------------------------------------");
     }
 
-    static void addIntToList (List list, int number) {
+    static void addIntToList(List list, int number) {
         LocalDateTime t0 = LocalDateTime.now();
         long start = t0.getNano();
         list.add(number);
         LocalDateTime t1 = LocalDateTime.now();
         long finish = t1.getNano();
-        System.out.println(String.format("The time of required operation: %s",finish-start));
+        System.out.println(String.format("The time of required operation: %s", finish - start));
     }
 
-    static void setIntToList (List list, int number) {
+    static void setIntToList(List list, int number) {
         long t0 = System.nanoTime();
         list.set(567, number);
         long t1 = System.nanoTime();
         long millis = t1 - t0;
-        double result = (double) millis/100000;
+        double result = (double) millis / 100000;
         System.out.println(String.format("The time of required operation: %f", result));
     }
 
-    static void getIntToList (List list) {
+    static void getIntToList(List list) {
         long t0 = System.nanoTime();
         list.get(567);
         long t1 = System.nanoTime();
@@ -147,7 +146,7 @@ public class Main {
         System.out.println(String.format("The time of required operation: %d", millis));
     }
 
-    static void removeIntToList (List list, int number) {
+    static void removeIntToList(List list, int number) {
         long t0 = System.nanoTime();
         list.remove(number);
         long t1 = System.nanoTime();
@@ -155,7 +154,7 @@ public class Main {
         System.out.println(String.format("The time of required operation: %d", millis));
     }
 
-    static void addStringToList (List list, String str) {
+    static void addStringToList(List list, String str) {
         long t0 = System.nanoTime();
         list.add(str);
         long t1 = System.nanoTime();
@@ -163,7 +162,7 @@ public class Main {
         System.out.println(String.format("The time of required operation: %d", millis));
     }
 
-    static void setStringToList (List list, String str) {
+    static void setStringToList(List list, String str) {
         long t0 = System.nanoTime();
         list.set(567, str);
         long t1 = System.nanoTime();
@@ -171,7 +170,7 @@ public class Main {
         System.out.println(String.format("The time of required operation: %d", millis));
     }
 
-    static void getStringToList (List list) {
+    static void getStringToList(List list) {
         long t0 = System.nanoTime();
         list.get(567);
         long t1 = System.nanoTime();
@@ -179,7 +178,7 @@ public class Main {
         System.out.println(String.format("The time of required operation: %d", millis));
     }
 
-    static void removeStringToList (List list, String str) {
+    static void removeStringToList(List list, String str) {
         long t0 = System.nanoTime();
         list.remove(str);
         long t1 = System.nanoTime();
